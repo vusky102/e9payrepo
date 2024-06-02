@@ -1,0 +1,110 @@
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: azure;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .active {
+    background-color: chartreuse;
+  }
+
+  li a:hover {
+    background-color: blueviolet;
+    color: aquamarine;
+  }
+
+  .center-container,h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+
+
+.center-form {
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  border-radius: 8px; 
+}
+
+.spacer {
+  height: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px; 
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px; 
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+</style>
+
+
+<header>
+  
+  <nav>
+      <ul>
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+  </nav>
+</header>
+
+<main>
+  <h2>User Login</h2>
+  <div class="center-container">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="center-form">
+    <label for="userId">User ID:</label>
+    <input type="text" id="userId" formControlName="userId" required>
+    
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password" required>
+    
+    <div class="spacer"></div>
+
+    <button type="submit" [disabled]="!myForm.valid">Login</button>
+  </form>
+  </div>
+</main>
+
+<footer>
+  <!-- Footer content -->
+</footer>
